@@ -52,7 +52,7 @@
 	  		  	  
 	  var mygrid = jQuery("#grid").jqGrid({
 			datatype: "json", 
-			url:'listTargetListFull.action', 
+			url:'listDailyFull.action', 
 			mtype: 'POST',
 			height: "auto",
 		   	colNames:['<s:text name="entity.id.label" />','<s:text name="entity.theme.label" />',
