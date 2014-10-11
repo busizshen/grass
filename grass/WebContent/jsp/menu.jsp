@@ -133,6 +133,11 @@
       <s:text name='menu.targetLists.title' />
     </div>
   </s:if>
+  <s:if test="#session.loginUser.view_targetList == 1">
+    <div onClick="openPage('/crm/listDailyListPage.action')">
+      <s:text name='menu.daily.title' />
+    </div>
+  </s:if>
 </div>
 <div id="mm5" style="width: 100px; display: none">
   <s:if test="#session.loginUser.view_document == 1">

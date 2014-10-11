@@ -32,7 +32,7 @@
 	   <property name="mappingDirectoryLocations">
 	       <list>
 	           <value>WEB-INF/classes/com/gcrm/domain/hbm</value>
-            </list>
+           </list>
        </property>
 		<property name="hibernateProperties">
 			<props>
@@ -488,7 +488,11 @@
         <property name="baseService" ref="baseService" />
         <property name="userService" ref="baseService" /> 
         <property name="campaignService" ref="baseService" />   
-    </bean> 
+    </bean>
+    
+    <bean id="listDailyAction" class="com.gcrm.action.crm.ListDailyAction" scope="prototype">   
+        <property name="baseService" ref="baseService" />
+    </bean>  
     
     <bean id="editTargetListAction" class="com.gcrm.action.crm.EditTargetListAction" scope="prototype">   
         <property name="baseService" ref="baseService" /> 

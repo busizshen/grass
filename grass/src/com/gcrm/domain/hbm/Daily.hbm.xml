@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="true" package="com.gcrm.domain">
+  <class dynamic-insert="true" dynamic-update="true"
+    name="com.gcrm.domain.Daily" table="daily">
+    <id column="id" name="id" type="java.lang.Integer">
+      <generator class="native" />
+    </id>
+    <property name="title" column="title" type="string" />
+    <property name="content" column="content" type="string" />
+    <property name="instructions" column="instructions" type="string" />
+    <property name="instructions_are" column="instructions_are" type="java.lang.Integer" />
+    <property name="createtime" column="createtime" type="string" />
+    <property name="edittime" column="edittime" type="string" />
+    <property name="instructionstime" column="instructionstime" type="string" />
+    <property name="ifinstructions" column="ifinstructions" type="string" />
+    
+  </class>
+</hibernate-mapping>

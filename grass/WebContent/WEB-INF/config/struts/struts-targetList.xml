@@ -15,6 +15,10 @@
     	<action name="listTargetListPage">
     	  <result type="redirect">/jsp/crm/listTargetList.jsp</result>
         </action>
+        
+        <action name="listDailyListPage">
+    	  <result type="redirect">/jsp/crm/listDailyList.jsp</result>
+        </action>
 
     	<action name="selectTargetList" class="listTargetListAction" method="select">
     	  <result type="redirect">/jsp/crm/listTargetList.jsp</result>

@@ -26,6 +26,7 @@
     <include file="../config/struts/struts-targetList.xml"/>
     <include file="../config/struts/struts-task.xml"/>
     <include file="../config/struts/struts-report.xml"/>
+    <include file="../config/struts/struts-daily.xml"/>
 
     <package name="default" extends="struts-default,json-default">
         <interceptors>

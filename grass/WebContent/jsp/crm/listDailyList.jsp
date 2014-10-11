@@ -55,20 +55,18 @@
 			url:'listTargetListFull.action', 
 			mtype: 'POST',
 			height: "auto",
-		   	colNames:['<s:text name="entity.id.label" />','<s:text name="entity.name.label" />',
-		  		   	'<s:text name="entity.assigned_to.label" />',
-		  		   	'<s:text name="entity.createdBy.label" />','<s:text name="entity.updatedBy.label" />',
-		  		   	'<s:text name="entity.createdOn.label" />','<s:text name="entity.updatedOn.label" />'],
+		   	colNames:['<s:text name="entity.id.label" />','<s:text name="entity.theme.label" />',
+		  		   	'<s:text name="entity.content.label" />','<s:text name="entity.createtime.label" />',
+		  		   	'<s:text name="entity.edittime.label" />','<s:text name="entity.ifinstructions.label" />',
+		  		   	'<s:text name="entity.createdOn.label" />'],
 		   	colModel:[
 		   		{name:'id',index:'id', width:120, key: true,sorttype:"int",resizable:true, hidden:true},
 		   		{name:'name',index:'name', width:150, resizable:true, formatter:urlFmatter},
 		   		{name:'assigned_to.name',index:'assigned_to.name', width:150, resizable:true, formatter:urlFmatter},
-		   		{name:'created_by.name',index:'created_by.name', width:150, resizable:true, hidden:true, formatter:urlFmatter},
-		   		{name:'updated_by.name',index:'updated_by.name', width:150, resizable:true, hidden:true, formatter:urlFmatter},
-		   		{name:'created_on',index:'created_on', width:150, resizable:true, hidden:true, formatter:urlFmatter, stype:'select', 
-			   		    editoptions:{value:"<%=DateTimeUtil.getSelectOptions()%>"}},
-		   		{name:'updated_on',index:'updated_on', width:150, resizable:true, hidden:true, formatter:urlFmatter, stype:'select', 
-				   		editoptions:{value:"<%=DateTimeUtil.getSelectOptions()%>"}}   		
+		   		{name:'created_by.name',index:'created_by.name', width:150, resizable:true, formatter:urlFmatter},
+		   		{name:'created_by.time',index:'created_by.time', width:150, resizable:true, formatter:urlFmatter},
+		   		{name:'updated_by.name',index:'updated_by.name', width:150, resizable:true, formatter:urlFmatter},
+		   		{name:'updated_by.name',index:'updated_by.name', width:150, resizable:true, hidden:true, formatter:urlFmatter}		
 		   	],
 		   	pager: 'pager', 
 		   	imgpath: 'image/images', 
@@ -76,7 +74,7 @@
 		   	viewrecords: true, 
 		   	rowList:[15,50,100], 
 		   	multiselect: true, 
-		   	caption: "<s:text name='title.grid.targetLists'/>"
+		   	caption: "<s:text name='title.grid.dailyLists'/>"
 		});
 		function urlFmatter (cellvalue, options, rowObject)
 		{  
@@ -130,12 +128,12 @@
             <span style="white-space: nowrap;"> <a
               href="editTargetList.action" class="easyui-linkbutton"
               iconCls="icon-add" plain="true"><s:text
-                  name="action.createTargetList" /></a>
+                  name="action.createDailyList" /></a>
             </span>
           </s:if> <s:if test="#session.loginUser.delete_targetList == 1">
             <span style="white-space: nowrap;"> <a id="delete"
               href="#" class="easyui-linkbutton" iconCls="icon-remove"
-              plain="true"><s:text name="action.deleteTargetList" /></a>
+              plain="true"><s:text name="action.deleteDailyList" /></a><!-- 删除 -->
             </span>
           </s:if> <span style="white-space: nowrap;"> <a
             href="javascript:void(0)" id="mtmt"
@@ -163,7 +161,7 @@
               </s:if>
               <s:if test="#session.loginUser.create_targetList == 1">
                 <div data-options="iconCls:'icon-copy'" id="copy">
-                  <s:text name='menu.item.copy.title' />
+                  <s:text name='menu.item.copy.title' /><!-- 复制 -->
                 </div>
               </s:if>
             </div>
@@ -172,7 +170,7 @@
       </div>
       <div id="feature-title">
         <h2>
-          <s:text name="title.listTargetList" />
+          <s:text name="title.listDailyList" />
         </h2>
       </div>
       <div id="feature-content">
@@ -186,7 +184,7 @@
         <table id="grid" class="scroll" cellpadding="0" cellspacing="0"></table>
         <div id="pager" class="scroll"></div>
         <div id="filter" style="margin-left: 30%; display: none">
-          <s:text name="title.listTargetList" />
+          <s:text name="title.listDailyList" />
         </div>
       </div>
     </div>
